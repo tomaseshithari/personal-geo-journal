@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Geo-Journal</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/535/535239.png">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-globe-americas"></i> Personal Geo-Journal</h1>
+            <p class="subtitle">Mapping my travels and dream destinations</p>
+            <div class="controls">
+                <button id="theme-toggle" title="Toggle dark/light mode"><i class="fas fa-moon"></i></button>
+                <button id="locate-me" title="Center map on my location"><i class="fas fa-location-arrow"></i></button>
+                <button id="reset-view" title="Reset to default view"><i class="fas fa-home"></i></button>
+            </div>
+        </header>
+        <main>
+            <div id="map"></div>
+            <div class="sidebar">
+                <h2><i class="fas fa-map-marker-alt"></i> Destinations</h2>
+                <div class="destination-list">
+                    <div class="destination-item" data-lat="37.7749" data-lng="-122.4194">
+                        <h3>San Francisco, USA</h3>
+                        <p><i class="fas fa-calendar-alt"></i> Visited: June 2023</p>
+                        <p><i class="fas fa-tags"></i> Tags: City, Tech, Golden Gate</p>
+                        <p class="notes">Iconic Golden Gate Bridge, vibrant culture, and tech hub.</p>
+                    </div>
+                    <div class="destination-item" data-lat="48.8566" data-lng="2.3522">
+                        <h3>Paris, France</h3>
+                        <p><i class="fas fa-calendar-alt"></i> Wishlist</p>
+                        <p><i class="fas fa-tags"></i> Tags: Romance, Art, Architecture</p>
+                        <p class="notes">Dream destination: Eiffel Tower, Louvre Museum, French cuisine.</p>
+                    </div>
+                    <div class="destination-item" data-lat="35.6762" data-lng="139.6503">
+                        <h3>Tokyo, Japan</h3>
+                        <p><i class="fas fa-calendar-alt"></i> Visited: March 2024</p>
+                        <p><i class="fas fa-tags"></i> Tags: Culture, Food, Modern</p>
+                        <p class="notes">Amazing blend of traditional temples and futuristic cityscapes.</p>
+                    </div>
+                    <div class="destination-item" data-lat="40.7128" data-lng="-74.0060">
+                        <h3>New York City, USA</h3>
+                        <p><i class="fas fa-calendar-alt"></i> Wishlist</p>
+                        <p><i class="fas fa-tags"></i> Tags: City, Broadway, Central Park</p>
+                        <p class="notes">The city that never sleeps - Times Square, Statue of Liberty.</p>
+                    </div>
+                </div>
+                <div class="add-destination">
+                    <h3><i class="fas fa-plus-circle"></i> Add New Destination</h3>
+                    <form id="add-form">
+                        <input type="text" id="dest-name" placeholder="Destination name" required>
+                        <input type="number" step="0.0001" id="dest-lat" placeholder="Latitude" required>
+                        <input type="number" step="0.0001" id="dest-lng" placeholder="Longitude" required>
+                        <textarea id="dest-notes" placeholder="Notes (optional)"></textarea>
+                        <button type="submit"><i class="fas fa-save"></i> Add to Map</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>Personal Geo-Journal &copy; 2025 | Built with <i class="fas fa-heart"></i> using <a href="https://leafletjs.com/" target="_blank">Leaflet</a> | <a href="https://github.com/tomaseshithari/personal-geo-journal" target="_blank">GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+    <script src="script.js"></script>
+</body>
+</html>
